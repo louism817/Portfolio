@@ -1,0 +1,33 @@
+﻿@model Portfolio.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "ProjectDetail";
+}
+
+<h2>ProjectDetail</h2>
+
+<div class="row">
+    <div class="well" style="width:70%; float:left">
+        <img src="@(Model.ImagePath)" style="max-width:100%;" />
+    </div>
+    <div class="well" style="width:28%; float:right">
+        <h4><u>Technologies Used For Project:</u></h4>
+        <ul>
+            @foreach (var tech in Model.Technologies)
+            {
+                <li>@tech.Name</li>
+            }
+        </ul>
+        <h4><u>Project Features:</u></h4>
+        <ul>
+            @foreach (var feature in Model.Features)
+            {
+                <li>@feature.Description</li>
+            }
+        </ul>      
+        <h4><u>GitHub Repository</u></h4>
+        <a href="@Model.GitHubRep"><p>@Model.GitHubRep</p></a>
+    </div>
+
+</div>
+
